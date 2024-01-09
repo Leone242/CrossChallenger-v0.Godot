@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://w5teg7t7gnlb"]
+
+[ext_resource type="Texture2D" uid="uid://c6xdtfgxyyjyd" path="res://Sprites/idle.png" id="1_87ppu"]
+[ext_resource type="Script" path="res://lobo.gd" id="1_385on"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wyl23"]
+radius = 18.0
+height = 36.0
+
+[node name="Lobo" type="CharacterBody2D"]
+script = ExtResource("1_385on")
+
+[node name="Colisor" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_wyl23")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_87ppu")
+hframes = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -30)
